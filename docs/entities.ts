@@ -66,3 +66,30 @@ interface Inspection {
     truck: Truck;
     inspector: Employee;
 }
+
+// Inventory related entities
+
+enum InventoryActionType {
+    borrow = "borrow",
+    return_ = "return",
+
+}
+interface InventoryCategory {
+    name: string;
+}
+
+interface InventoryAction {
+    type: InventoryActionType;
+    employee: Employee;
+    inventory: Inventory;
+    amount: number
+}
+
+interface Inventory {
+    name: string;
+    image: string;
+    amount: number;
+    actions: InventoryAction[];
+    category: InventoryCategory;
+    tags: String[]
+}
